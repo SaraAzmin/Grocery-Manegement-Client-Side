@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import Logo from '../../../images/logo.jpg';
 import SocialLogin from '../SocialLogin/SocialLogin';
 import { useAuthState, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
@@ -15,9 +15,12 @@ const Login = () => {
     ] = useSignInWithEmailAndPassword(auth);
 
     const navigate = useNavigate();
+    const location = useLocation();
+
+    let from = location.state?.from?.pathname || "/";
 
     if (user) {
-        navigate('/home');
+        navigate(from, { replace: true });
     }
 
     const handleLogin = event => {

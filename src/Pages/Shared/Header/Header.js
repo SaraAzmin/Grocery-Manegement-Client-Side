@@ -1,7 +1,17 @@
+import { signOut } from 'firebase/auth';
 import React from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
+import auth from '../../../firebase.init';
 
 const Header = () => {
+
+    const [user] = useAuthState(auth);
+
+    const handleLogout = () => {
+        signOut(auth);
+    }
+
     return (
         <div>
             <nav
@@ -32,7 +42,7 @@ const Header = () => {
                             ></path>
                         </svg>
                     </button>
-                    <div className="w-full collapse navbar-collapse flex justify-between items-center p-4" id="navbarSupportedContent">
+                    <div className="w-full collapse navbar-collapse flex justify-around items-center p-4" id="navbarSupportedContent">
                         <div className=''>
 
                             <ul className="navbar-nav flex flex-col pl-0 list-style-none mr-auto">
@@ -58,21 +68,44 @@ const Header = () => {
                         </div>
                         <div>
                             <ul className="navbar-nav flex flex-col pl-0 list-style-none mr-auto">
+                                {
+                                    user && <>
+                                        <li className="nav-item p-2">
+                                            <Link
+                                                className="nav-link text-white"
+                                                to="/add"
+                                            >Add</Link>
+                                        </li>
+                                        <li className="nav-item p-2">
+                                            <Link
+                                                className="nav-link text-white"
+                                                to="/manageinventory"
+                                            >Manage</Link>
+                                        </li>
+                                        <li className="nav-item p-2">
+                                            <Link
+                                                className="nav-link text-white"
+                                                to="/myitems"
+                                            >My Items</Link>
+                                        </li>
+                                    </>
+                                }
                                 <li className="nav-item p-2">
                                     <Link className="nav-link text-white" to="/register">Register</Link>
                                 </li>
                                 <li className="nav-item p-2">
-                                    <Link
-                                        className="nav-link text-white"
-                                        to="/login"
-                                    >Login</Link>
+                                    {
+                                        user ? <Link onClick={handleLogout}
+                                            className="nav-link text-white bg-green-600 p-2"
+                                            to="/home">Log Out</Link> :
+                                            <Link
+                                                className="nav-link text-white"
+                                                to="/login"
+                                            >Login</Link>
+                                    }
+
                                 </li>
-                                <li className="nav-item p-2">
-                                    <Link
-                                        className="nav-link text-white"
-                                        to="/manageinventory"
-                                    >Manage</Link>
-                                </li>
+
                             </ul>
                         </div>
                     </div>

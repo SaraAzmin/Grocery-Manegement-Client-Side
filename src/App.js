@@ -6,6 +6,8 @@ import Header from './Pages/Shared/Header/Header';
 import ManageInventory from './Pages/ManageInventory/ManageInventory';
 import Login from './Pages/Login/Login/Login';
 import Register from './Pages/Login/Register/Register';
+import RequireAuth from './Pages/Login/RequireAuth/RequireAuth';
+import ManageProduct from './Pages/ManageProduct/ManageProduct';
 
 function App() {
   return (
@@ -17,6 +19,11 @@ function App() {
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/register' element={<Register></Register>}></Route>
         <Route path='/manageinventory' element={<ManageInventory></ManageInventory>}></Route>
+        <Route path='/product/:productId' element={
+          <RequireAuth>
+            <ManageProduct></ManageProduct>
+          </RequireAuth>
+        }></Route>
       </Routes>
     </div>
   );
