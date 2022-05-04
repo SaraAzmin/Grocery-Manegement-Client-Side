@@ -4,7 +4,7 @@
         "name": "Avocado",
         "img": "https://verbraucherfenster.hessen.de/sites/verbraucherfenster.hessen.de/files/content-images/RS10537_ganze%20und%20halbe%20Avocado%20isoliert%20%20%C3%82%C2%A9%20eyewave%20-%20Fotolia.com_.jpg",
         "price": 2,
-        "Quantity": 27,
+        "quantity": 27,
         "description": "Our Hass avocado is characterized by its exquisite taste and nutty aroma. It contains rich, intense yellow flesh and is uniform, smooth and spreadable in appearance.",
         "supplier": "Fresh for you",
         "email": " "
@@ -14,8 +14,8 @@
         "name": "Strawberry",
         "img": "https://www.crodapersonalcare.com/croda_image_downloads.ashx?fn=Personalcare_0_strawberry-shutterstock_771314446.jpg&mn=personalcare&w=768&xr=0&yr=0&xfp=6&yfp=6&hash=FDA6E5C93BDE278AA0B30F90EF2A401519C138999FEC74AA&t=7",
         "price": 4,
-        "Quantity": 84,
-        "description": "Aromatic strawberry halves for decoration and toppings: selected fruits, carefully picked and halved by hand. Ideal as a cake topping and for dessert variations, homemade jam and many other strawberry-fresh ideas",
+        "quantity": 84,
+        "description": "Aromatic strawberry halves for decoration and toppings: selected fruits, carefully picked and halved by hand. Ideal as a cake topping and for dessert variations, homemade jam.",
         "supplier": "Fresh for you",
         "email": " "
     },
@@ -24,7 +24,7 @@
         "name": "Banana",
         "img": "https://www.collinsdictionary.com/images/full/banana_64728013.jpg",
         "price": 4,
-        "Quantity": 60,
+        "quantity": 60,
         "description": "Unlike the well-known common banana, the plantain is usually not consumed raw, but processed into various dishes. The taste of the raw plantain is floury and rather unpleasant.",
         "supplier": "Fresh for you",
         "email": " "
@@ -34,8 +34,8 @@
         "name": "Tometo",
         "img": "https://unavum.com/wp-content/uploads/2020/06/TOMETO.jpg",
         "price": 2.5,
-        "Quantity": 20,
-        "description": "ORGANIC seed genuine and reproducible in Demeter quality. Salad tomato Rondobella has excellent tolerance to late blight and brown blight and is ideal for outdoor cultivation. The large, red, round fruits ripen as early as the end of June.",
+        "quantity": 20,
+        "description": "ORGANIC seed genuine and reproducible in Demeter quality. Salad tomato Rondobella has excellent tolerance to late blight and brown blight and is ideal for outdoor cultivation.",
         "supplier": "Fresh for you",
         "email": " "
     },
@@ -44,8 +44,8 @@
         "name": "Red Onion",
         "img": "https://produits.bienmanger.com/36700-0w470h470_Organic_Red_Onion_From_Italy.jpg",
         "price": 5,
-        "Quantity": 55,
-        "description": "Onions are known to be rich in biotin. Most of the flavonoids, known as antioxidants, are found in the outer layers. Therefore, when peeling off the layers, as little as possible should be removed.",
+        "quantity": 55,
+        "description": "Onions are known to be rich in biotin. Most of the flavonoids, known as antioxidants, are found in the outer layers. Therefore, when peeling off the layers,little should be removed.",
         "supplier": "Fresh for you",
         "email": " "
     },
@@ -54,7 +54,7 @@
         "name": "Capsicum",
         "img": "https://media.istockphoto.com/photos/sweet-pepper-paprika-isolated-on-white-background-clipping-path-full-picture-id1130564105?k=20&m=1130564105&s=612x612&w=0&h=uqbNpncgI8ERymnkDTdH3u9d9d2-9mUFkE4qKtpvnz0=",
         "price": 5,
-        "Quantity": 16,
+        "quantity": 16,
         "description": "The best pepper plants for maximum yield. Peppers contain many healthy nutrients and are high in fiber and vitamin E. These plants provide fresh, juicy peppers.",
         "supplier": "Fresh for you",
         "email": " "
@@ -64,8 +64,8 @@
         "name": "Cabbage",
         "img": "https://images.heb.com/is/image/HEBGrocery/000374791",
         "price": 4,
-        "Quantity": 19,
-        "description": "Irure commodo consectetur ut sint elit fugiat occaecat nostrud veniam incididunt dolor laborum. Sint commodo esse esse id sint veniam eu. Non ea incididunt nulla eu dolore sit veniam est anim. Id in cupidatat commodo dolore anim ipsum ipsum anim incididunt ad id deserunt. Eu magna occaecat est quis deserunt in. Consequat proident laboris proident dolor fugiat cupidatat aliqua dolore cillum.\r\n",
+        "quantity": 19,
+        "description": "White cabbage (regional) from Germany fresh & directly from the Hamburg wholesale market. The firm, green to whitish-green leaves form a round or pointed shape. ",
         "supplier": "Fresh for you",
         "email": " "
     },
@@ -74,7 +74,7 @@
         "name": "Broccoli",
         "img": "https://images.heb.com/is/image/HEBGrocery/000319052?fit=constrain,1&wid=800&hei=800&fmt=jpg&qlt=85,0&resMode=sharp2&op_usm=1.75,0.3,2,0",
         "price": 7,
-        "Quantity": 22,
+        "quantity": 22,
         "description": "The best for you: broccoli of the highest quality with a natural and aromatic taste, cut by hand - you only get tender and flawless florets. Can be portioned as needed.",
         "supplier": "Fresh for you",
         "email": " "
@@ -84,8 +84,8 @@
         "name": "Potato",
         "img": "https://gpi-degouwe.com/wp-content/uploads/2020/06/Potatoes.jpg",
         "price": 3,
-        "Quantity": 52,
-        "description": "The Goldmarie is a potato from organic farming. This means no pesticides were used. It is a waxy potato with a smooth skin and an oval shape. The potato owes its name to the golden yellow color of the skin.",
+        "quantity": 52,
+        "description": "The Goldmarie is a potato from organic farming. It is a waxy potato with a smooth skin and an oval shape. The potato owes its name to the golden yellow color of the skin.",
         "supplier": "Fresh for you",
         "email": " "
     }
