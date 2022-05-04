@@ -1,12 +1,35 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Logo from '../../../images/logo.jpg';
 import SocialLogin from '../SocialLogin/SocialLogin';
-import { useAuthState } from 'react-firebase-hooks/auth';
+import { useAuthState, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import auth from '../../../firebase.init';
 
 const Login = () => {
 
+    const [
+        signInWithEmailAndPassword,
+        user,
+        loading,
+        error,
+    ] = useSignInWithEmailAndPassword(auth);
 
+    const navigate = useNavigate();
+
+    if (user) {
+        navigate('/home');
+    }
+
+    const handleLogin = event => {
+
+        event.preventDefault();
+
+        const email = event.target.email.value;
+        const password = event.target.password.value;
+
+        signInWithEmailAndPassword(email, password);
+
+    }
 
     return (
         <div>
@@ -24,33 +47,30 @@ const Login = () => {
                                         />
                                         <h4 className="text-xl font-semibold mb-5 pb-1">Go <span classNameName='text-green-600'>Green</span> Groceries Team</h4>
                                     </div>
-                                    <form>
+                                    <form onSubmit={handleLogin}>
                                         <p className="mb-4">Please login to your account</p>
                                         <div className="mb-4">
                                             <input
-                                                type="email"
+                                                type="email" name='email'
                                                 className="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-green-600 focus:outline-none"
                                                 id="exampleFormControlInput1"
-                                                placeholder="email"
+                                                placeholder="email" required
                                             />
                                         </div>
                                         <div className="mb-4">
                                             <input
-                                                type="password"
+                                                type="password" name='password'
                                                 className="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-green-600 focus:outline-none"
                                                 id="exampleFormControlInput1"
-                                                placeholder="Password"
+                                                placeholder="Password" required
                                             />
                                         </div>
                                         <div className="text-center pt-1 mb-6 pb-1">
-                                            <button
+                                            <input
                                                 className="inline-block px-6 py-3 bg-green-600 text-white font-medium text-sm leading-tight uppercase rounded shadow-md hover:bg-green-800 hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg transition duration-150 ease-in-out w-full mb-3"
-                                                type="button"
+                                                type="submit"
                                                 data-mdb-ripple="true"
-                                                data-mdb-ripple-color="light"
-                                            >
-                                                Log in
-                                            </button>
+                                                data-mdb-ripple-color="light" value='Login'></input>
                                             <Link className="text-gray-500" to="/">Forgot password?</Link>
                                         </div>
                                         <div className="flex items-center justify-between pb-5">
@@ -59,10 +79,7 @@ const Login = () => {
                                                 type="button"
                                                 className="inline-block px-6 py-2 border-2 border-green-600 text-green-600 font-medium text-xs leading-tight uppercase rounded hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out"
                                                 data-mdb-ripple="true"
-                                                data-mdb-ripple-color="light" to='/register'
-                                            >
-                                                Register Now
-                                            </Link>
+                                                data-mdb-ripple-color="light" to='/register'> Register Now</Link>
                                         </div>
                                     </form>
                                     <SocialLogin></SocialLogin>
