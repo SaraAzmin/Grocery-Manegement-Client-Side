@@ -1,8 +1,15 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Product = ({ product }) => {
 
     const { _id, name, img, price, quantity, description, supplier, email } = product;
+
+    const navigate = useNavigate();
+
+    const navigateToManageProduct = (id) => {
+        navigate("/product/" + id);
+    }
 
     return (
         <div>
@@ -19,7 +26,7 @@ const Product = ({ product }) => {
                             <h5 className='text-gray-900 text-lg font-medium'>Price: <span className=' text-green-600'>${price}</span></h5>
                             <h5 className='text-gray-900 text-lg font-medium'>Quantity: <span className=' text-green-600'>{quantity}</span></h5>
                         </div>
-                        <button type="button" class=" inline-block px-6 py-2.5 bg-green-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-green-800 hover:shadow-lg hover:scale-110 transition duration-300 ease-in-out">Manage Product</button>
+                        <button type="button" onClick={() => navigateToManageProduct(_id)} class=" inline-block px-6 py-2.5 bg-green-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-green-800 hover:shadow-lg hover:scale-110 transition duration-300 ease-in-out">Manage Product</button>
                     </div>
                 </div>
             </div>
