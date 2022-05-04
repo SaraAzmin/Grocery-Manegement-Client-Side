@@ -70,13 +70,12 @@ const Header = () => {
                                 <li className="nav-item p-2">
                                     <Link
                                         className="nav-link text-white"
-                                        to="/"
+                                        to="/manageinventory"
                                     >Manage</Link>
                                 </li>
                             </ul>
                         </div>
                     </div>
-
                 </div>
             </nav>
 
