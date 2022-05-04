@@ -59,12 +59,12 @@ const Header = () => {
                         <div>
                             <ul className="navbar-nav flex flex-col pl-0 list-style-none mr-auto">
                                 <li className="nav-item p-2">
-                                    <Link className="nav-link text-white" to="/">Register</Link>
+                                    <Link className="nav-link text-white" to="/register">Register</Link>
                                 </li>
                                 <li className="nav-item p-2">
                                     <Link
                                         className="nav-link text-white"
-                                        to="/"
+                                        to="/login"
                                     >Login</Link>
                                 </li>
                                 <li className="nav-item p-2">
