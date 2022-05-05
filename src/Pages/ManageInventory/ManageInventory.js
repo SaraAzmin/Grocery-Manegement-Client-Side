@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTrash } from '@fortawesome/free-solid-svg-icons'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { Link } from 'react-router-dom';
 
 const ManageInventory = () => {
     const [products, setProducts] = useState([]);
@@ -35,13 +36,14 @@ const ManageInventory = () => {
     }
 
     return (
-        <div id='services'>
+        <div>
             <div className='mx-10 md:mx-20 mb-10' >
-                <h2 className='text-2xl md:text-4xl pt-5 md:pt-10 font-semibold text-green-600 drop-shadow-2xl uppercase mb-10'>Products Available</h2>
+                <h2 className='text-2xl md:text-4xl pt-5 md:pt-10 font-semibold text-green-600 drop-shadow-2xl uppercase mb-5'>Products Available</h2>
+                <Link to="/addproduct" type="button" class=" inline-block px-5 py-3 mb-5 bg-green-600 text-white font-semibold text-lg leading-tight rounded shadow-md hover:bg-green-800 hover:shadow-lg">Add Product</Link>
                 <div className="flex flex-col">
                     <div className="py-2 inline-block min-w-full sm:px-6 lg:px-8">
                         <div className="overflow-hidden">
-                            <table className="min-w-full">
+                            <table className="min-w-full border-2 border-green-500 border-double">
                                 <thead className="bg-white border-b border-green-500">
                                     <tr>
                                         <th scope="col" className="text-lg font-semibold text-gray-900 px-6 py-4 text-center">
