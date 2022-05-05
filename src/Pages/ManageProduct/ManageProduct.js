@@ -8,7 +8,7 @@ const ManageProduct = () => {
 
     return (
         <div className='mt-10 '>
-            <h3 className='text-3xl text-green-600 font-semibold pb-5 mb-5 border-b-2 border-green-600 inline-block'>Manage Product</h3>
+            <h3 className='text-3xl text-green-600 font-semibold pb-5 mb-5 border-b-2 border-green-600 inline-block uppercase'>Manage Product</h3>
             <div className='flex flex-col justify-center items-center mb-5'>
                 <div className='mb-2'>
                     <img src="" alt="" />
