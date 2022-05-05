@@ -13,6 +13,7 @@ import MyItems from './Pages/MyItems/MyItems';
 import NotFound from './Pages/NotFound/NotFound';
 
 function App() {
+
   return (
     <div className="App">
       <Header></Header>
@@ -22,8 +23,15 @@ function App() {
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/register' element={<Register></Register>}></Route>
         <Route path='/manageinventory' element={<ManageInventory></ManageInventory>}></Route>
-        <Route path='/addproduct' element={<AddProduct></AddProduct>}></Route>
-        <Route path='/myitems' element={<MyItems></MyItems>}></Route>
+        <Route path='/addproduct' element={
+          <RequireAuth>
+            <AddProduct></AddProduct>
+          </RequireAuth>
+        }></Route>
+        <Route path='/myitems' element={
+          <RequireAuth>
+            <MyItems></MyItems>
+          </RequireAuth>}></Route>
         <Route path='/inventory/:productId' element={
           <RequireAuth>
             <ManageProduct></ManageProduct>
