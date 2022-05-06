@@ -9,7 +9,7 @@ const LowStockProducts = () => {
     const lowStock = products.filter(product => product.quantity < 20);
 
     useEffect(() => {
-        fetch('http://localhost:5000/groceries')
+        fetch('https://evening-earth-39289.herokuapp.com/groceries')
             .then(res => res.json())
             .then(data => setProducts(data));
     }, []);

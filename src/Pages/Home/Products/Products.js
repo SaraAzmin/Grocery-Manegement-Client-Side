@@ -9,7 +9,7 @@ const Products = () => {
     const sixProducts = products.slice(0, 6);
 
     useEffect(() => {
-        fetch('http://localhost:5000/groceries')
+        fetch('https://evening-earth-39289.herokuapp.com/groceries')
             .then(res => res.json())
             .then(data => setProducts(data));
     }, []);

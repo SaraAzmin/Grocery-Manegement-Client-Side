@@ -16,7 +16,7 @@ const ManageInventory = () => {
     const myItems = products.filter(product => product.email === user.email);
 
     useEffect(() => {
-        fetch('http://localhost:5000/groceries')
+        fetch('https://evening-earth-39289.herokuapp.com/groceries')
             .then(res => res.json())
             .then(data => setProducts(data));
     }, []);
@@ -26,7 +26,7 @@ const ManageInventory = () => {
         const isSure = window.confirm('Are you sure you want to delete the product?');
 
         if (isSure) {
-            const url = `http://localhost:5000/groceries/${id}`;
+            const url = `https://evening-earth-39289.herokuapp.com/groceries/${id}`;
             fetch(url, {
                 method: 'DELETE',
                 headers: {
