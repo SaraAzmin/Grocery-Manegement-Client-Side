@@ -6,12 +6,36 @@ const ManageProduct = () => {
     const { productId } = useParams();
     const [product, setProduct] = useState({});
 
+    const [newQuantity, setNewQuantity] = useState(product.quantity);
+
     useEffect(() => {
-        const url = `http://localhost:5000/groceries/${productId}`
+        const url = `http://localhost:5000/groceries/${productId}`;
         fetch(url)
             .then(res => res.json())
             .then(data => setProduct(data))
-    }, [])
+    }, [newQuantity])
+
+    const handleDelivery = (id) => {
+
+        const newQuantity = parseInt(product.quantity) - 1;
+        const updatedQuantity = { newQuantity };
+
+        // send data to the server
+        fetch(`http://localhost:5000/inventory/${id}`, {
+            method: 'PUT',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(updatedQuantity)
+
+        })
+            .then(res => res.json())
+            .then(data => {
+                setNewQuantity(updatedQuantity);
+                console.log('success', data);
+            })
+
+    }
 
     return (
         <div className='my-10 '>
@@ -30,24 +54,24 @@ const ManageProduct = () => {
                 </div>
                 <div className="flex justify-center  mb-5">
                     <h5 className='text-gray-900 text-lg font-medium pr-3'>Price: </h5>
-                    <h5 className='text-gray-900 text-lg font-normal'>{product.price}</h5>
+                    <h5 className='text-gray-900 text-lg font-normal'>${product.price}</h5>
                 </div>
                 <div className="flex justify-center  mb-5">
                     <h5 className='text-gray-900 text-lg font-medium pr-3'>Quantity: </h5>
-                    <h5 className='text-gray-900 text-lg font-normal'>{product.quantity}</h5>
-                    <button type="button" className=" inline-block px-5 py-2 bg-green-600 text-white font-medium text-sm leading-tight uppercase rounded shadow-md hover:bg-green-800 hover:shadow-lg ml-3">Deliver</button>
+                    <h5 className='text-gray-900 text-lg font-normal' name='quantity'>{product.quantity}</h5>
+                    <button type="button" className=" inline-block px-5 py-2 bg-green-600 text-white font-medium text-sm leading-tight uppercase rounded shadow-md hover:bg-green-800 hover:shadow-lg ml-3" onClick={() => handleDelivery(product._id)}>Deliver</button>
                 </div>
                 <div className="flex justify-center  mb-5">
                     <h5 className='text-gray-900 text-lg font-medium pr-3'>Add Stock: </h5>
                     <input
                         type="number"
-                        class="form-control px-2 py-1 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                        className="form-control px-2 py-1 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
                         placeholder="stock input" />
                     <button type="button" className=" inline-block px-5 py-2 bg-green-600 text-white font-medium text-sm leading-tight uppercase rounded shadow-md hover:bg-green-800 hover:shadow-lg ml-3">Update</button>
                 </div>
 
             </div>
-            <Link to="/manageinventory" type="button" class=" inline-block px-6 py-4 bg-green-600 text-white font-semibold text-lg leading-tight rounded shadow-md hover:bg-green-800 hover:shadow-lg">Manage Inventory</Link>
+            <Link to="/manageinventory" type="button" className=" inline-block px-6 py-4 bg-green-600 text-white font-semibold text-lg leading-tight rounded shadow-md hover:bg-green-800 hover:shadow-lg">Manage Inventory</Link>
         </div>
     );
 };

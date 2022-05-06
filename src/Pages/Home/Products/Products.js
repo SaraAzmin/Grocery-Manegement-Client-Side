@@ -23,7 +23,7 @@ const Products = () => {
                         sixProducts.map(product => <Product key={product._id} product={product}></Product>)
                     }
                 </div>
-                <Link to="/manageinventory" type="button" class=" inline-block px-6 py-4 bg-green-600 text-white font-semibold text-lg leading-tight rounded shadow-md hover:bg-green-800 hover:shadow-lg">Manage Inventory</Link>
+                <Link to="/manageinventory" type="button" className=" inline-block px-6 py-4 bg-green-600 text-white font-semibold text-lg leading-tight rounded shadow-md hover:bg-green-800 hover:shadow-lg">Manage Inventory</Link>
             </div>
         </div>
     );

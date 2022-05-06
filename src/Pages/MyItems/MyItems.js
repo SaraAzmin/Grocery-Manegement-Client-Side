@@ -45,7 +45,7 @@ const ManageInventory = () => {
         <div>
             <div className='mx-10 md:mx-20 mb-10' >
                 <h2 className='text-2xl md:text-4xl pt-5 md:pt-10 font-semibold text-green-600 drop-shadow-2xl uppercase mb-5'>My Items</h2>
-                <Link to="/addproduct" type="button" class=" inline-block px-5 py-3 mb-5 bg-green-600 text-white font-semibold text-lg leading-tight rounded shadow-md hover:bg-green-800 hover:shadow-lg">Add Product</Link>
+                <Link to="/addproduct" type="button" className=" inline-block px-5 py-3 mb-5 bg-green-600 text-white font-semibold text-lg leading-tight rounded shadow-md hover:bg-green-800 hover:shadow-lg">Add Product</Link>
                 <div className="flex flex-col">
                     <div className="py-2 inline-block min-w-full sm:px-6 lg:px-8">
                         <div className="overflow-hidden">
