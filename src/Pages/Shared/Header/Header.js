@@ -42,9 +42,8 @@ const Header = () => {
                             ></path>
                         </svg>
                     </button>
-                    <div className="w-full collapse navbar-collapse flex justify-around items-center p-4" id="navbarSupportedContent">
+                    <div className="w-full open navbar-collapse lg:flex lg:justify-around items-center p-4" id="navbarSupportedContent">
                         <div className=''>
-
                             <ul className="navbar-nav flex flex-col pl-0 list-style-none mr-auto">
                                 <li className="nav-item p-2">
                                     <Link className="nav-link text-white" to="/">Home</Link>

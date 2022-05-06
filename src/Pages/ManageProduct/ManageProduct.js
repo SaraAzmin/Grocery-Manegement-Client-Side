@@ -67,10 +67,10 @@ const ManageProduct = () => {
     }
 
     return (
-        <div className='my-10 '>
+        <div className='my-10 mx-10 md:mx-0 '>
             <h3 className='text-3xl text-green-600 font-semibold pb-5 mb-3 inline-block uppercase'>Manage Product</h3>
-            <div className='flex justify-center items-center mb-5 border-2 lg:w-1/2 mx-auto p-5 rounded-md border-green-500'>
-                <div className='mr-5 lg:w-2/5'>
+            <div className='md:flex justify-center items-center mb-5 border-2 lg:w-1/2 mx-auto p-5 rounded-md border-green-500'>
+                <div className='md:mr-5 lg:w-2/5 mb-5 md:mb-0'>
                     <img className='h-[12rem] mx-auto' src={product.img} alt="" />
                 </div>
                 <div className='lg:w-3/5 justify-start items-start'>
@@ -89,15 +89,17 @@ const ManageProduct = () => {
                     <div className="flex mb-5">
                         <h5 className='text-gray-900 text-lg font-medium pr-3'>Quantity: </h5>
                         <h5 className='text-gray-900 text-lg font-normal' name='quantity'>{product.quantity}</h5>
-                        <button type="button" className=" inline-block px-5 py-2 bg-green-600 text-white font-medium text-sm leading-tight uppercase rounded shadow-md hover:bg-green-800 hover:shadow-lg ml-3" onClick={() => handleDelivery(product._id)}>Deliver</button>
+                        <button type="button" className="inline-block px-5 py-2 bg-green-600 text-white font-medium text-sm leading-tight uppercase rounded shadow-md hover:bg-green-800 hover:shadow-lg ml-3" onClick={() => handleDelivery(product._id)}>Deliver</button>
                     </div>
-                    <div className="flex mb-5">
-                        <h5 className='text-gray-900 text-lg font-medium pr-3'>Add Stock: </h5>
-                        <input
-                            type="number"
-                            className="form-control px-2 py-1 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-                            placeholder="stock input" name='valueAdd' onChange={getInputValue} />
-                        <button type="button" className=" inline-block px-5 py-2 bg-green-600 text-white font-medium text-sm leading-tight uppercase rounded shadow-md hover:bg-green-800 hover:shadow-lg ml-3" onClick={() => handleUpdate(product._id)}>Update</button>
+                    <div className="md:flex mb-5">
+                        <div>
+                            <h5 className='text-gray-900 text-lg font-medium pr-3'>Add Stock: </h5>
+                            <input
+                                type="number"
+                                className="form-control px-2 py-1 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                                placeholder="stock input" name='valueAdd' onChange={getInputValue} />
+                        </div>
+                        <button type="button" className=" inline-block px-5 mt-3 md:mt-0 py-2 bg-green-600 text-white font-medium text-sm leading-tight uppercase rounded shadow-md hover:bg-green-800 hover:shadow-lg ml-3" onClick={() => handleUpdate(product._id)}>Update</button>
                     </div>
                 </div>
 

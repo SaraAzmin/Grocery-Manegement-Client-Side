@@ -7,10 +7,10 @@ const ContactPersons = () => {
         <div className='bg-green-500'>
             <div className='mx-10 md:mx-20 pb-6'>
                 <div class="container px-6 mx-auto">
-                    <section class="mb-20 text-gray-800 text-center">
-                        <h2 class="text-3xl font-bold py-10">Contact the <u class="text-white uppercase">team</u></h2>
+                    <section class="mb-5 lg:mb-20 text-gray-800 text-center">
+                        <h2 class="text-2xl md:text-3xl font-bold py-10">Contact the <u class="text-white uppercase">team</u></h2>
                         <div class="grid gap-x-6 lg:gap-x-12 md:grid-cols-3">
-                            <div class="mb-20 md:mb-0">
+                            <div class="mb-10 md:mb-0">
                                 <div class="rounded-lg shadow-lg h-full block bg-white">
                                     <div class="flex justify-center">
                                         <div class="flex justify-center">
@@ -28,7 +28,7 @@ const ContactPersons = () => {
                                 </div>
                             </div>
 
-                            <div class="mb-20 md:mb-0">
+                            <div class="mb-10 md:mb-0">
                                 <div class="rounded-lg shadow-lg h-full block bg-white">
                                     <div class="flex justify-center">
                                         <div class="flex justify-center" >
@@ -47,7 +47,7 @@ const ContactPersons = () => {
                                 </div>
                             </div>
 
-                            <div class="mb-20 md:mb-0">
+                            <div class="mb-10 md:mb-0">
                                 <div class="rounded-lg shadow-lg h-full block bg-white">
                                     <div class="flex justify-center">
                                         <div class="flex justify-center">

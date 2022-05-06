@@ -20,9 +20,9 @@ const LowStockProducts = () => {
 
     return (
         <div className='bg-green-50'>
-            <div className='mx-10 md:mx-24 py-10'>
-                <h2 className='text-2xl md:text-3xl pt-5 md:pt-5 font-bold text-green-900 drop-shadow-2xl uppercase'>Products lower in stock</h2>
-                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 py-5 md:py-10'>
+            <div className='mx-10 md:mx-24 py-5 md:py-10'>
+                <h2 className='text-xl md:text-3xl pt-2 md:pt-5 font-bold text-green-900 drop-shadow-2xl uppercase'>Products lower in stock</h2>
+                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-10 py-5 md:py-10'>
                     {
                         lowStock.map(product =>
                             <div className='flex bg-white items-center p-5 rounded-md outline-2 outline-green-600 outline-dotted'>
