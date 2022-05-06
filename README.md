@@ -2,9 +2,9 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## [Live Site Link](https://purpose-coach-website.web.app/)
+## [Live Site Link](https://grocery-inventory-client-side.web.app/)
 
-Click here to see the client-side live site: https://purpose-coach-website.web.app/
+Click here to see the client-side live site: https://grocery-inventory-client-side.web.app/
 
 Click here to see the server-side live site: https://evening-earth-39289.herokuapp.com/
 
