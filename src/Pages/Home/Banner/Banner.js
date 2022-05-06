@@ -16,7 +16,7 @@ const Banner = () => {
                             className="block w-full"
                             alt="Woman with groceries"
                         />
-                        <div className="carousel-caption hidden md:block absolute text-center bg-black lg:mb-48">
+                        <div className="carousel-caption hidden md:block absolute text-center bg-black lg:mb-64">
                             <h5 className="text-xl md:text-2xl lg:text-4xl uppercase text-green-500 font-semibold">A promise for fresh food!</h5>
                         </div>
                     </div>

@@ -4,7 +4,7 @@ const QuestionTwo = () => {
     return (
         <div className='border-2 border-green-100 p-5 m-5 md:m-10'>
             <h4 className='mb-5 text-xl font-semibold text-green-600'> Q2: When should you use nodejs and when should you use mongodb.</h4>
-            <p>Authorization means to give access to some specific things to a user.For example, if a project is done by you, you only have the authorization of it. It is to give access to certain data or resources to a user. On the other hand, authentication is varifying a user. For example, when you login to your social accounts or even bank accounts, you have your own unique user id, password. The login details you verifies whether it's the right one and then gives access.  </p>
+            <p className='px-5'>Nodejs is an efficient choice when building any application where browser needs to communicate or send data to server. It is appropiate to build larger application. Nodejs should be used for real time applications as it can handle huge communication asynchronously without causing issues. Mongodb is a nosql database. Mongodb should be used when the data we are using has a object like document type data. Mongodb can handle bulk amount of data. So this database is a good choice for scalable large applications. </p>
         </div>
     );
 };
