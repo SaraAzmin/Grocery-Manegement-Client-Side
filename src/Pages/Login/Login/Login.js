@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import Logo from '../../../images/logo.jpg';
 import SocialLogin from '../SocialLogin/SocialLogin';
-import { useAuthState, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useSignInWithEmailAndPassword, useSendPasswordResetEmail } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
 import Loading from '../../Shared/Loading/Loading';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Login = () => {
 
@@ -14,6 +16,9 @@ const Login = () => {
         loading,
         error,
     ] = useSignInWithEmailAndPassword(auth);
+
+    const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
+    const emailRef = useRef('');
 
     const navigate = useNavigate();
     const location = useLocation();
@@ -45,6 +50,20 @@ const Login = () => {
 
     }
 
+    const resetPassword = async () => {
+
+        const email = emailRef.current.value;
+
+        if (email) {
+            await sendPasswordResetEmail(email);
+            toast('Password reset email sent');
+        }
+        else {
+            toast('Enter valid email address');
+        }
+
+    }
+
     return (
         <div>
             <section className="h-full bg-green-50">
@@ -68,7 +87,7 @@ const Login = () => {
 
                                         <div className="mb-4">
                                             <input
-                                                type="email" name='email'
+                                                type="email" name='email' ref={emailRef}
                                                 className="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-green-600 focus:outline-none"
                                                 id="exampleFormControlInput1"
                                                 placeholder="email" required
@@ -88,7 +107,7 @@ const Login = () => {
                                                 type="submit"
                                                 data-mdb-ripple="true"
                                                 data-mdb-ripple-color="light" value='Login'></input>
-                                            <Link className="text-gray-500" to="/">Forgot password?</Link>
+                                            <Link onClick={resetPassword} className="text-gray-500 hover:text-green-600" to="/login">Forgot password?</Link>
                                         </div>
                                         <div className="flex items-center justify-between pb-5">
                                             <p className="mb-0 mr-2">Don't have an account?</p>
@@ -100,6 +119,7 @@ const Login = () => {
                                         </div>
                                     </form>
                                     <SocialLogin></SocialLogin>
+                                    <ToastContainer></ToastContainer>
                                 </div>
                             </div>
                         </div>

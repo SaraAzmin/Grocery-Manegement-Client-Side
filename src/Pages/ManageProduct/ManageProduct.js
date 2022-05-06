@@ -64,7 +64,6 @@ const ManageProduct = () => {
 
     const getInputValue = event => {
         valueToAdd = parseInt(event.target.value);
-        //console.log(valueToAdd);
     }
 
     return (
