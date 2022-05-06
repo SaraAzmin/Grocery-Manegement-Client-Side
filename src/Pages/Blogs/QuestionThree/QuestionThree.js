@@ -4,7 +4,7 @@ const QuestionThree = () => {
     return (
         <div className='border-2 border-green-100 p-5 m-5 md:m-10'>
             <h4 className='mb-5 text-xl font-semibold text-green-600'> Q3: Differences between sql and nosql databases.</h4>
-            <p>Authorization means to give access to some specific things to a user.For example, if a project is done by you, you only have the authorization of it. It is to give access to certain data or resources to a user. On the other hand, authentication is varifying a user. For example, when you login to your social accounts or even bank accounts, you have your own unique user id, password. The login details you verifies whether it's the right one and then gives access.  </p>
+            <p className='px-5'>SQL databases have a fixed structure like table. Whereas nosql has a document like structure. Sql databases are relation and nosql databases are non-relational. Sql databases support vertical scalling. On the other hand, nosql databases support horizontal scaling. Some examples of sql databases are: mysql, oracle, Ms sql server. Some examples of nosql databases are mongodb, mariadb, neo4j. </p>
         </div>
     );
 };
