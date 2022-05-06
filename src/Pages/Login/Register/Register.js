@@ -4,6 +4,7 @@ import SocialLogin from '../SocialLogin/SocialLogin';
 import Logo from '../../../images/logo.jpg';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
+import Loading from '../../Shared/Loading/Loading';
 
 const Register = () => {
 
@@ -15,9 +16,19 @@ const Register = () => {
     ] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
 
     const navigate = useNavigate();
+    let errorMessage;
+
 
     if (user) {
         navigate('/home');
+    }
+
+    if (loading) {
+        return (<Loading></Loading>);
+    }
+
+    if (error) {
+        errorMessage = <p className='text-red-700 font-medium my-2'>{error?.message}</p>
     }
 
 
@@ -40,19 +51,22 @@ const Register = () => {
                 <section className="h-full bg-green-50">
                     <div className="container py-6 px-6 h-full">
                         <div className="flex justify-center items-center flex-wrap h-full g-6 text-gray-800">
-                            <div className="block bg-white shadow-lg rounded-lg">
+                            <div className="block bg-white shadow-lg rounded-lg px-10">
                                 <div className=" px-4 md:px-0">
-                                    <div className="md:p-10 md:mx-6">
+                                    <div className="md:p-6 md:mx-6">
                                         <div className="text-center">
                                             <img
                                                 className="mx-auto w-48"
                                                 src={Logo}
                                                 alt="logo"
                                             />
-                                            <h4 className="text-xl font-semibold mb-5 pb-1">Go <span classNameName='text-green-600'>Green</span> Groceries Team</h4>
+                                            <h4 className="text-xl font-semibold mb-5 pb-3 border-b-2">Go <span className='text-green-600'>Green</span> Groceries Team</h4>
                                         </div>
                                         <form onSubmit={handleRegistration}>
                                             <p className="mb-4">Please create your account</p>
+
+                                            {errorMessage}
+
                                             <div className="mb-4">
                                                 <input
                                                     type="text" name='name'
