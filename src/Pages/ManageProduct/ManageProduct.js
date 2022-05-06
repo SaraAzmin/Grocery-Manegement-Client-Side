@@ -7,14 +7,17 @@ const ManageProduct = () => {
     const [product, setProduct] = useState({});
 
     const [newQuantity, setNewQuantity] = useState(product.quantity);
+    let valueToAdd = 0;
 
     useEffect(() => {
         const url = `http://localhost:5000/groceries/${productId}`;
         fetch(url)
             .then(res => res.json())
             .then(data => setProduct(data))
-    }, [newQuantity])
+    }, [newQuantity]);
 
+
+    //for quantity decrease
     const handleDelivery = (id) => {
 
         const newQuantity = parseInt(product.quantity) - 1;
@@ -34,7 +37,34 @@ const ManageProduct = () => {
                 setNewQuantity(updatedQuantity);
                 console.log('success', data);
             })
+    }
 
+    //for quantity increase
+    const handleUpdate = (id) => {
+
+        const newQuantity = parseInt(product.quantity) + valueToAdd;
+        const updatedQuantity = { newQuantity };
+
+        // send data to the server
+        fetch(`http://localhost:5000/inventory/${id}`, {
+            method: 'PUT',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(updatedQuantity)
+
+        })
+            .then(res => res.json())
+            .then(data => {
+                setNewQuantity(updatedQuantity);
+                console.log('success', data);
+            })
+
+    }
+
+    const getInputValue = event => {
+        valueToAdd = parseInt(event.target.value);
+        //console.log(valueToAdd);
     }
 
     return (
@@ -66,8 +96,8 @@ const ManageProduct = () => {
                     <input
                         type="number"
                         className="form-control px-2 py-1 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-                        placeholder="stock input" />
-                    <button type="button" className=" inline-block px-5 py-2 bg-green-600 text-white font-medium text-sm leading-tight uppercase rounded shadow-md hover:bg-green-800 hover:shadow-lg ml-3">Update</button>
+                        placeholder="stock input" name='valueAdd' onChange={getInputValue} />
+                    <button type="button" className=" inline-block px-5 py-2 bg-green-600 text-white font-medium text-sm leading-tight uppercase rounded shadow-md hover:bg-green-800 hover:shadow-lg ml-3" onClick={() => handleUpdate(product._id)}>Update</button>
                 </div>
 
             </div>
