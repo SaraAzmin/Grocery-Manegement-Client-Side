@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import Product from '../Home/Product/Product';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faTrash } from '@fortawesome/free-solid-svg-icons'
+import { faTrash, faPen } from '@fortawesome/free-solid-svg-icons'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const ManageInventory = () => {
+
     const [products, setProducts] = useState([]);
+    const navigate = useNavigate();
 
     useEffect(() => {
         fetch('http://localhost:5000/groceries')
@@ -33,6 +35,10 @@ const ManageInventory = () => {
             const newProducts = products.filter(product => product._id !== id);
             setProducts(newProducts);
         }
+    }
+
+    const handleUpdate = id => {
+        navigate("/inventory/" + id);
     }
 
     return (
@@ -83,7 +89,8 @@ const ManageInventory = () => {
                                                 {product.quantity}
                                             </td>
                                             <td className="text-sm text-gray-900 font-normal px-6 py-4 whitespace-nowrap">
-                                                <button onClick={() => handleDelete(product._id)} className='hover:fill-red-700'><FontAwesomeIcon icon={faTrash} /></button>
+                                                <button title='Update Product' onClick={() => handleUpdate(product._id)} className='hover:fill-red-700 mr-4'><FontAwesomeIcon icon={faPen} /></button>
+                                                <button title='Delete Product' onClick={() => handleDelete(product._id)} className='hover:fill-red-700'><FontAwesomeIcon icon={faTrash} /></button>
                                             </td>
                                         </tr>
                                     </tbody>)
