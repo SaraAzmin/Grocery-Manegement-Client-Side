@@ -11,6 +11,7 @@ import ManageProduct from './Pages/ManageProduct/ManageProduct';
 import AddProduct from './Pages/AddProduct/AddProduct';
 import MyItems from './Pages/MyItems/MyItems';
 import NotFound from './Pages/NotFound/NotFound';
+import Blogs from './Pages/Blogs/Blogs/Blogs';
 
 function App() {
 
@@ -23,6 +24,7 @@ function App() {
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/register' element={<Register></Register>}></Route>
         <Route path='/manageinventory' element={<ManageInventory></ManageInventory>}></Route>
+        <Route path='/blogs' element={<Blogs></Blogs>}></Route>
         <Route path='/addproduct' element={
           <RequireAuth>
             <AddProduct></AddProduct>
