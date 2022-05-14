@@ -48,12 +48,6 @@ const Header = () => {
                                 <li className="nav-item p-2">
                                     <Link className="nav-link text-white" to="/">Home</Link>
                                 </li>
-                                <li className="nav-item p-2">
-                                    <Link
-                                        className="nav-link text-white"
-                                        to="/blogs"
-                                    >Blogs</Link>
-                                </li>
 
                             </ul>
                         </div>

@@ -28,7 +28,7 @@ This is a website for a Grocery inventory management system. The website has fol
 - Logged in user has additional functionalities. Adding item, Managing items. They also have access to a page named My items where they can have see products added by themselves. 
 
 
-## Teck Stack Used for Client Side
+## Tech Stack Used for Client Side
 
 - TailwindCSS
 - ReactJs
