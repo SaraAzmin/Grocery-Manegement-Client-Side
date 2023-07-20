@@ -9,7 +9,7 @@ const Products = () => {
     const sixProducts = products.slice(0, 6);
 
     useEffect(() => {
-        fetch('https://evening-earth-39289.herokuapp.com/groceries')
+        fetch('https://grocery-management-server-side.vercel.app/groceries')
             .then(res => res.json())
             .then(data => setProducts(data));
     }, []);

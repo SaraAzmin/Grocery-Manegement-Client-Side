@@ -9,7 +9,7 @@ const LowStockProducts = () => {
     const lowStock = products.filter(product => product.quantity < 20);
 
     useEffect(() => {
-        fetch('https://evening-earth-39289.herokuapp.com/groceries')
+        fetch('https://grocery-management-server-side.vercel.app/groceries')
             .then(res => res.json())
             .then(data => setProducts(data));
     }, []);

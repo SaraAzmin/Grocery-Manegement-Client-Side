@@ -10,7 +10,7 @@ const ManageProduct = () => {
     let valueToAdd = 0;
 
     useEffect(() => {
-        const url = `https://evening-earth-39289.herokuapp.com/groceries/${productId}`;
+        const url = `https://grocery-management-server-side.vercel.app/groceries/${productId}`;
         fetch(url)
             .then(res => res.json())
             .then(data => setProduct(data))
@@ -24,7 +24,7 @@ const ManageProduct = () => {
         const updatedQuantity = { newQuantity };
 
         // send data to the server
-        fetch(`https://evening-earth-39289.herokuapp.com/inventory/${id}`, {
+        fetch(`https://grocery-management-server-side.vercel.app/inventory/${id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
@@ -46,7 +46,7 @@ const ManageProduct = () => {
         const updatedQuantity = { newQuantity };
 
         // send data to the server
-        fetch(`https://evening-earth-39289.herokuapp.com/inventory/${id}`, {
+        fetch(`https://grocery-management-server-side.vercel.app/inventory/${id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

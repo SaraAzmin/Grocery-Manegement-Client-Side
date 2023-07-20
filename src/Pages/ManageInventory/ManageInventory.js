@@ -12,7 +12,7 @@ const ManageInventory = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        fetch('https://evening-earth-39289.herokuapp.com/groceries')
+        fetch('https://grocery-management-server-side.vercel.app/groceries')
             .then(res => res.json())
             .then(data => setProducts(data));
     }, []);
@@ -22,7 +22,7 @@ const ManageInventory = () => {
         const isSure = window.confirm('Are you sure you want to delete the product?');
 
         if (isSure) {
-            const url = `https://evening-earth-39289.herokuapp.com/groceries/${id}`;
+            const url = `https://grocery-management-server-side.vercel.app/groceries/${id}`;
             fetch(url, {
                 method: 'DELETE',
                 headers: {
